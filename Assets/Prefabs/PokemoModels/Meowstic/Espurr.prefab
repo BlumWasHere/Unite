@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4019607065242204168}
+  - component: {fileID: 8948521634945601353}
   m_Layer: 6
   m_Name: Espurr
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 998723120092618693}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8948521634945601353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751504560345423701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6e17633f71ab14e9c852846091df0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineTag
+  categories: 1
+  includeChildren: 1
+  renderers:
+  - {fileID: 8618593338289334142}
 --- !u!1001 &744945651869710382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1367,7 +1384,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &3990080203932583235
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1381,6 +1398,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -1389,6 +1407,12 @@ Animator:
 --- !u!4 &998723120092618693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b612b8f7b211c6b41bc4d5e6c1fdf988,
+    type: 3}
+  m_PrefabInstance: {fileID: 744945651869710382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8618593338289334142 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -158205542246719664, guid: b612b8f7b211c6b41bc4d5e6c1fdf988,
     type: 3}
   m_PrefabInstance: {fileID: 744945651869710382}
   m_PrefabAsset: {fileID: 0}

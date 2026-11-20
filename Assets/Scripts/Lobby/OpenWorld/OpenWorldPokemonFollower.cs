@@ -10,6 +10,10 @@ public sealed class OpenWorldPokemonFollower : MonoBehaviour
     [SerializeField, Min(0.05f)] private float updateInterval = 0.2f;
     [SerializeField, Min(0.1f)] private float sampleRadius = 3f;
     [SerializeField, Min(1f)] private float catchUpDistance = 25f;
+    [SerializeField, Min(0.1f)] private float maxSpeed = 8f;
+    [SerializeField, Min(0f)] private float catchUpGain = 2f;
+    [SerializeField, Min(0.1f)] private float speedChangeRate = 12f;
+    [SerializeField, Min(0.05f)] private float minMoveSpeed = 1.2f;
 
     private static readonly int Walking = Animator.StringToHash("Walking");
     private NavMeshAgent agent;
@@ -17,6 +21,9 @@ public sealed class OpenWorldPokemonFollower : MonoBehaviour
     private GameObject visual;
     private Animator[] animators;
     private float nextUpdate;
+    private Vector3 lastTargetPosition;
+    private float targetSpeed;
+    private bool wantsToMove;
 
     public Transform Target => target;
 
@@ -26,13 +33,17 @@ public sealed class OpenWorldPokemonFollower : MonoBehaviour
         agent.enabled = false;
     }
 
-    public void Initialize(Transform trainer, GameObject model)
+    public void Initialize(Transform trainer, GameObject model, float scale = 1f)
     {
         target = trainer;
+        lastTargetPosition = trainer.position;
+        targetSpeed = 0f;
         agent.stoppingDistance = stopDistance;
+        agent.acceleration = 100f;
         visual = Instantiate(model, transform, false);
         visual.transform.localPosition = Vector3.zero;
         visual.transform.localRotation = Quaternion.identity;
+        visual.transform.localScale *= scale;
         foreach (var collider in visual.GetComponentsInChildren<Collider>(true)) collider.enabled = false;
         var compatibleAnimators = new System.Collections.Generic.List<Animator>();
         foreach (var animator in visual.GetComponentsInChildren<Animator>(true))
@@ -90,11 +101,37 @@ public sealed class OpenWorldPokemonFollower : MonoBehaviour
                 return;
             }
 
-            float distance = Vector3.Distance(transform.position, target.position);
-            if (distance > followDistance && Sample(target.position, out var hit)) agent.SetDestination(hit.position);
-            else if (distance <= stopDistance && !agent.isOnOffMeshLink) agent.ResetPath();
+            if (wantsToMove && Sample(target.position, out var hit))
+                agent.SetDestination(hit.position);
         }
+        UpdateSpeed();
+        if (wantsToMove && !agent.hasPath && !agent.pathPending && Sample(target.position, out var start))
+            agent.SetDestination(start.position);
         SetWalking(agent.enabled && agent.isOnNavMesh && !agent.isStopped && agent.velocity.sqrMagnitude > 0.01f);
+    }
+    private void UpdateSpeed()
+    {
+        if (!agent.enabled || !agent.isOnNavMesh) return;
+        float dt = Time.deltaTime;
+        if (dt > 0f)
+        {
+            Vector3 delta = target.position - lastTargetPosition;
+            delta.y = 0f;
+            targetSpeed = Mathf.Lerp(targetSpeed, delta.magnitude / dt, 1f - Mathf.Exp(-8f * dt));
+        }
+        lastTargetPosition = target.position;
+
+        float distance = Vector3.Distance(transform.position, target.position);
+        float t = Mathf.SmoothStep(0f, 1f, Mathf.InverseLerp(stopDistance, followDistance, distance));
+        float desired = Mathf.Clamp(targetSpeed * t + catchUpGain * Mathf.Max(0f, distance - stopDistance), 0f, maxSpeed);
+        wantsToMove = desired >= minMoveSpeed;
+        if (!wantsToMove)
+        {
+            agent.speed = minMoveSpeed;
+            if (!agent.isOnOffMeshLink) agent.ResetPath();
+            return;
+        }
+        agent.speed = Mathf.MoveTowards(Mathf.Max(agent.speed, minMoveSpeed), desired, speedChangeRate * dt);
     }
 
     private void SetWalking(bool walking)

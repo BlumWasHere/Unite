@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3711872114421830982}
+  - component: {fileID: 8695404028109900182}
   m_Layer: 6
   m_Name: Cinderace
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 642007534502147247}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8695404028109900182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747554505077774372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6e17633f71ab14e9c852846091df0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineTag
+  categories: 1
+  includeChildren: 1
+  renderers:
+  - {fileID: 3135918903230479695}
 --- !u!1001 &1108561768174752580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -615,6 +632,12 @@ Animator:
 --- !u!4 &642007534502147247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dc170f3a9439e354cb90bb4944beb247,
+    type: 3}
+  m_PrefabInstance: {fileID: 1108561768174752580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3135918903230479695 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2659202607349673483, guid: dc170f3a9439e354cb90bb4944beb247,
     type: 3}
   m_PrefabInstance: {fileID: 1108561768174752580}
   m_PrefabAsset: {fileID: 0}

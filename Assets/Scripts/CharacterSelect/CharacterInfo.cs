@@ -29,4 +29,7 @@ public class CharacterInfo : ScriptableObject
     public Sprite CircleIcon => circleIcon != null ? circleIcon : icon;
 
     public bool Hidden;
+// I noticed that when in the overworld, some Pokemon were way too big, so I made this to try to make them more logical.
+    [Tooltip("Scale multiplier applied only to the open-world companion model.")]
+    [Min(0.01f)] public float companionScale = 1f;
 }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192470933934210051}
+  - component: {fileID: 2064042086198196125}
   m_Layer: 0
   m_Name: Lucario
   m_TagString: Untagged
@@ -32,6 +33,23 @@ Transform:
   - {fileID: 7951123287019285771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2064042086198196125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8552409839691267138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6e17633f71ab14e9c852846091df0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineTag
+  categories: 1
+  includeChildren: 1
+  renderers:
+  - {fileID: 2276351471391572022}
+  - {fileID: 2279495902018768208}
 --- !u!1001 &7625344026650315488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +122,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 712723189636487566}
   m_SourcePrefab: {fileID: 100100000, guid: 8f70596ce5d4dc74dbe85b794bb16881, type: 3}
+--- !u!137 &2276351471391572022 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -700995392604992810, guid: 8f70596ce5d4dc74dbe85b794bb16881,
+    type: 3}
+  m_PrefabInstance: {fileID: 7625344026650315488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &2279495902018768208 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -688825824737359952, guid: 8f70596ce5d4dc74dbe85b794bb16881,
+    type: 3}
+  m_PrefabInstance: {fileID: 7625344026650315488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7283376318315411377 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f70596ce5d4dc74dbe85b794bb16881,

@@ -117,7 +117,7 @@ public sealed class OpenWorldPokemonCompanion : NetworkBehaviour
                 follower = Instantiate(followerPrefab, transform.position, transform.rotation);
                 follower.name = $"{character.pokemonName} companion";
                 SceneManager.MoveGameObjectToScene(follower.gameObject, gameObject.scene);
-                follower.Initialize(transform, model);
+                follower.Initialize(transform, model, character.companionScale);
                 LoadStatus = $"{character.pokemonName} is your companion.";
                 loading = null;
                 yield break;

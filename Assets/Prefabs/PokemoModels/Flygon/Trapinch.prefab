@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7030366153903845476}
+  - component: {fileID: -1612037394923613417}
   m_Layer: 6
   m_Name: Trapinch
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 4491944816053171783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1612037394923613417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154771866967648414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6e17633f71ab14e9c852846091df0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineTag
+  categories: 1
+  includeChildren: 1
+  renderers:
+  - {fileID: 5270565179312826463}
 --- !u!1001 &4169244187490570668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -792,7 +809,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &7516390681907066317
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -806,6 +823,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -814,6 +832,12 @@ Animator:
 --- !u!4 &4491944816053171783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 213a91b74d204654cbac3c8d7d404f32,
+    type: 3}
+  m_PrefabInstance: {fileID: 4169244187490570668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5270565179312826463 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1082853594312001037, guid: 213a91b74d204654cbac3c8d7d404f32,
     type: 3}
   m_PrefabInstance: {fileID: 4169244187490570668}
   m_PrefabAsset: {fileID: 0}

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2603311084989998799}
+  - component: {fileID: -2140009425096513274}
   m_Layer: 6
   m_Name: Meowstic(male)
   m_TagString: Untagged
@@ -32,6 +33,25 @@ Transform:
   - {fileID: 3353238867122156934}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2140009425096513274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8945797885597955941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6e17633f71ab14e9c852846091df0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineTag
+  categories: 1
+  includeChildren: 1
+  renderers:
+  - {fileID: 140477718889182507}
+  - {fileID: 292373391918567539}
+  - {fileID: 7662321279686889267}
+  - {fileID: 1273290064033013998}
 --- !u!1001 &2955383380593873517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1579,6 +1599,24 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6374502115496501341}
   m_SourcePrefab: {fileID: 100100000, guid: 07e35d07459478f4480509dbf610835f, type: 3}
+--- !u!137 &140477718889182507 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2950053722574235462, guid: 07e35d07459478f4480509dbf610835f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2955383380593873517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &292373391918567539 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3246278994289558046, guid: 07e35d07459478f4480509dbf610835f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2955383380593873517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1273290064033013998 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5140855574810004861, guid: 07e35d07459478f4480509dbf610835f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2955383380593873517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2720957402406530876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 07e35d07459478f4480509dbf610835f,
@@ -1587,7 +1625,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &6374502115496501341
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1601,6 +1639,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -1609,6 +1648,12 @@ Animator:
 --- !u!4 &3353238867122156934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 07e35d07459478f4480509dbf610835f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2955383380593873517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7662321279686889267 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4371401917754811042, guid: 07e35d07459478f4480509dbf610835f,
     type: 3}
   m_PrefabInstance: {fileID: 2955383380593873517}
   m_PrefabAsset: {fileID: 0}

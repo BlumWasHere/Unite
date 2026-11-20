@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8741586830502128957}
+  - component: {fileID: -8453991747953992579}
   m_Layer: 6
   m_Name: Raboot
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 7789452907800149170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8453991747953992579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886556647365975665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6e17633f71ab14e9c852846091df0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineTag
+  categories: 1
+  includeChildren: 1
+  renderers:
+  - {fileID: 2246011623640994447}
 --- !u!1001 &7751551870223702873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -589,6 +606,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2100861250355337018}
   m_SourcePrefab: {fileID: 100100000, guid: 7c0c576ed6a02ef40bbbaa9a1abc76f7, type: 3}
+--- !u!137 &2246011623640994447 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -812788747594118698, guid: 7c0c576ed6a02ef40bbbaa9a1abc76f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7751551870223702873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7445121481639454216 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c0c576ed6a02ef40bbbaa9a1abc76f7,
@@ -597,7 +620,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &2100861250355337018
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -611,6 +634,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1

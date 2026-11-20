@@ -33,3 +33,4 @@ MonoBehaviour:
   circleIcon: {fileID: 21300000, guid: 3dbacd4bddb758d45bd406c9eeb24cdb, type: 3}
   portrait: {fileID: 21300000, guid: d8e944046508c634a8aacd2549156a3a, type: 3}
   Hidden: 0
+  companionScale: 0.5
